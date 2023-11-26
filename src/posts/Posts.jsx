@@ -3,6 +3,7 @@ import style from "../style.module.css";
 import Counter from "./Counter";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { getPostsService } from "../services/PostService";
+import useTitle from "../hooks/useTitle";
 
 const Posts = () => {
   const [post, setPost] = useState([]);
@@ -24,7 +25,9 @@ const Posts = () => {
   };
   useEffect(() => {
     getPosts();
+  
   }, []);
+  useTitle("پست ها")
 
   useEffect(() => {
    console.log("dss")
